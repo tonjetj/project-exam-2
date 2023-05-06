@@ -8,6 +8,7 @@ const HeaderWrapper = styled.div`
   flex-direction: column;
   background-color: #202124;
   color: #fff; 
+  width: 100%; 
 `;
 
 const TopHeader = styled.div`
@@ -16,6 +17,12 @@ const TopHeader = styled.div`
   align-items: center;
   height: 80px;
   padding: 0px;
+  margin: 0 20px; 
+  @media screen and (min-width: 768px) {
+    width: 50%; 
+    justify-content: space-between; 
+    margin: 0 auto; 
+  }
 `;
 
 const LogoWrapper = styled.div`
