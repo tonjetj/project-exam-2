@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import SubNavigation from "./subNav";
 import SearchBar from "./SearchBar";
+import logo from "../../assets/logo.png";
+
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -15,7 +17,7 @@ const TopHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  min-height: 50px;
   padding: 0px;
   margin: 0 20px; 
   @media screen and (min-width: 768px) {
@@ -26,12 +28,12 @@ const TopHeader = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-  display: flex;
   align-items: center;
+  margin-left: 20px; 
 `;
 
 const LogoImg = styled.img`
-  max-height: 40px;
+  max-height: 20px;
   min-width: 40px;
 `;
 
@@ -40,7 +42,7 @@ function Header(){
     <HeaderWrapper>
       <TopHeader>
         <LogoWrapper>
-          <LogoImg src="../../assets/logo.png" alt="logo" />
+          <LogoImg src={logo} alt="Holidaze logo" />
         </LogoWrapper>
         <SearchBar />
       </TopHeader>

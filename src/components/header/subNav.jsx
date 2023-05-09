@@ -6,6 +6,18 @@ import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 
 
+const Home = styled(HomeRoundedIcon)`
+max-height: 20px; 
+`;
+const Explore = styled(ExploreRoundedIcon)`
+max-height: 20px; 
+`;
+const Favourite = styled(FavoriteRoundedIcon)`
+max-height: 20px; 
+`;
+const LogIn = styled(AccountCircleRoundedIcon)`
+max-height: 20px; 
+`;
 
 const SubNavWrapper = styled.div`
   display: flex;
@@ -22,7 +34,6 @@ const SubNavWrapper = styled.div`
 
   @media screen and (min-width: 768px) {
     position: static;
-    box-shadow: none;
     border-radius: 0px 0px 60px 60px; 
     width: 50%; 
     justify-content: space-between; 
@@ -35,21 +46,23 @@ const SubNavigationItem = styled.a`
   font-weight: light;
   cursor: pointer;
   text-align: center;
-  font-size: 12px; 
+  font-size: 10px; 
   margin: 0 auto; 
+
 `;
 
 const Sp = styled.p`
 padding: 0px; 
-margin-top: 0px; `
+margin-top: 0px; 
+`;
 
 function SubNavigation() {
   return (
     <SubNavWrapper>
-      <SubNavigationItem><HomeRoundedIcon/><Sp>Home</Sp></SubNavigationItem>
-      <SubNavigationItem><ExploreRoundedIcon/><Sp>Explore</Sp></SubNavigationItem>
-      <SubNavigationItem><FavoriteRoundedIcon/><Sp>Favourites</Sp></SubNavigationItem>
-      <SubNavigationItem><AccountCircleRoundedIcon/><Sp>Log In</Sp></SubNavigationItem>
+      <SubNavigationItem><Home/><Sp>Home</Sp></SubNavigationItem>
+      <SubNavigationItem><Explore/><Sp>Explore</Sp></SubNavigationItem>
+      <SubNavigationItem><Favourite/><Sp>Favourites</Sp></SubNavigationItem>
+      <SubNavigationItem><LogIn/><Sp>Log In</Sp></SubNavigationItem>
     </SubNavWrapper>
   );
 };
