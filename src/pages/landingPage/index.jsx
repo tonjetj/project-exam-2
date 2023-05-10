@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { VENUES } from "../../api/apiEndpoints";
 import { API_BASE_URL } from "../../api/apiBase";
-import { CardList, Card, CardTitle, CardText, VenueImage, LandingContainer } from "./index.styles";
+import * as S from "./index.styles";
+import logo from "../../assets/logo.png";
 
 const url = `${API_BASE_URL}${VENUES}`;
 
@@ -14,7 +15,7 @@ function LandingPage() {
         const response = await fetch(url);
         const data = await response.json();
         const sortedVenues = data.sort((a, b) => {
-            return new Date(b.createdAt) - new Date(a.createdAt);
+            return new Date(b.created) - new Date(a.created);
           });
           setVenues(sortedVenues.slice(0, 3));
       } catch (error) {
@@ -26,20 +27,30 @@ function LandingPage() {
   }, []);
 
   return (
-    <LandingContainer>
+    <S.LandingContainer>
+
       <h1>This is the landing page</h1>
+      <S.HeroImgContainer>
+        <S.HolidazeHero src={logo} alt="Holidaze logo"/>
+        <S.HeroText>Find unique places 
+to rent and stay in.</S.HeroText>
+        <S.HeroCta>See what's available</S.HeroCta>
+        </S.HeroImgContainer>
+
       <h2>Newest venues</h2>
-      <CardList>
+      <S.CardList>
         {venues.map((venue) => (
-          <Card key={venue.id}>
-            <VenueImage src={venue.media} alt="Venue Media" />
-            <CardTitle>{venue.name}</CardTitle>
-            <CardText>Max Guests: {venue.maxGuests}</CardText>
-            <CardText>{venue.price} kr /night</CardText>
-          </Card>
+          <S.Card key={venue.id}>
+            <S.VenueImage src={venue.media} alt="Venue Media" />
+            <S.CardTitle>{venue.name}</S.CardTitle>
+            <S.CardText><S.Place /> {venue.location.address}, {venue.location.country}</S.CardText>
+            <S.CardText>{venue.price} kr night</S.CardText>
+            <S.CardText>{venue.rating}<S.Star></S.Star></S.CardText>
+          </S.Card>
         ))}
-      </CardList>
-    </LandingContainer>
+      </S.CardList>
+
+    </S.LandingContainer>
   );
 }
 
