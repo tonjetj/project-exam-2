@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { VENUES } from "../../api/apiEndpoints";
 import { API_BASE_URL } from "../../api/apiBase";
 import * as S from "./index.styles";
@@ -15,7 +16,7 @@ function LandingPage() {
         const response = await fetch(url);
         const data = await response.json();
         const sortedVenues = data.sort((a, b) => {
-            return new Date(b.created) - new Date(a.created);
+            return new Date(b.meta.wifi) - new Date(a.meta.wifi);
           });
           setVenues(sortedVenues.slice(0, 3));
       } catch (error) {
@@ -28,14 +29,20 @@ function LandingPage() {
 
   return (
     <S.LandingContainer>
+      <S.HeroSection>
 
-      <h1>This is the landing page</h1>
       <S.HeroImgContainer>
         <S.HolidazeHero src={logo} alt="Holidaze logo"/>
         <S.HeroText>Find unique places 
 to rent and stay in.</S.HeroText>
-        <S.HeroCta>See what's available</S.HeroCta>
+        <Link to="/venues">
+          <S.HeroCta>See what's available</S.HeroCta>
+        </Link>
         </S.HeroImgContainer>
+
+        <S.HeroCard/>
+        <S.HeroCard2/>
+      </S.HeroSection>
 
       <h2>Newest venues</h2>
       <S.CardList>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import PlaceIcon from '@mui/icons-material/Place';
 import StarIcon from '@mui/icons-material/Star';
 import heroImage from "../../assets/cabin2.jpg";
+import registerImg from "../../assets/cabin1.jpg";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
@@ -12,22 +13,42 @@ const GlobalStyles = createGlobalStyle`
 
 export default GlobalStyles;
 
+export const HeroSection = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+`;
 
 export const HeroImgContainer = styled.div`
-background-image: url(${heroImage});
+  background-image: url(${heroImage});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 400px; 
   border-radius: 20px; 
+  grid-column: span 3;
+  grid-row: span 7;
   display: flex;
   flex-direction: column; 
   justify-content: center;
   align-items: center;
-`
+
+  @media screen and (max-width: 768px) {
+    grid-column: unset;
+    grid-row: unset;
+    margin-bottom: 1rem;
+  }
+`;
 
 export const HolidazeHero = styled.img`
-max-width: 200px; 
+max-width: 150px; 
 `
 export const HeroText = styled.p`
 font-size: 20px; 
@@ -41,7 +62,30 @@ export const HeroCta = styled.button`
  padding: 10px 20px; 
  cursor: pointer; 
  font-size: 15px; 
+ margin-bottom: 60px; 
+`
 
+export const HeroCard = styled.div`
+background-image: url(${registerImg});
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+  background-color: #000;
+  grid-column: span 2;
+  grid-row: span 4;
+  border-radius: 20px; 
+
+  @media screen and (max-width: 768px) {
+    grid-column: unset;
+    grid-row: unset;
+    min-height: 120px; 
+  }
+`;
+
+export const HeroCard2 = styled(HeroCard)`
+background-image: none; 
+background-color: #3B00C7;
+grid-row: span 3; 
 `
 
 
