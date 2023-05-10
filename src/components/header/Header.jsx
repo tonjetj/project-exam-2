@@ -22,7 +22,7 @@ const TopHeader = styled.div`
   padding: 0px;
   margin: 0 20px; 
   @media screen and (min-width: 768px) {
-    width: 50%; 
+    width: 58%; 
     justify-content: space-between; 
     margin: 0 auto; 
   }
@@ -30,7 +30,6 @@ const TopHeader = styled.div`
 
 const LogoWrapper = styled.div`
   align-items: center;
-  margin-left: 20px; 
 `;
 
 const LogoImg = styled.img`
