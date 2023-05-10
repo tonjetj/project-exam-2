@@ -33,10 +33,17 @@ const SubNavWrapper = styled.div`
   box-sizing: border-box;
   border-radius: 60px 60px 0px 0px; 
 
+  @media screen and (min-width: 1200px) {
+    position: static;
+    border-radius: 0px 0px 60px 60px; 
+    width: 55%; 
+    justify-content: space-between; 
+    margin: 0 auto; 
+  }
   @media screen and (min-width: 768px) {
     position: static;
     border-radius: 0px 0px 60px 60px; 
-    width: 50%; 
+    width: 60%; 
     justify-content: space-between; 
     margin: 0 auto; 
   }

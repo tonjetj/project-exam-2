@@ -3,9 +3,13 @@ export const LandingContainer = styled.div`
   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
-  @media screen and (min-width: 768px){
+  @media screen and (max-width: 1200px){
+    max-width: 60%; 
+  }  @media screen and (min-width: 1200px){
     max-width: 45%; 
-  }
+  } @media screen and (max-width: 768px){
+    max-width: 90%; 
+  } 
 `;
 
 export const CardList = styled.ul`
@@ -15,9 +19,10 @@ export const CardList = styled.ul`
   gap: 1.5rem;
   padding: 0;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1250px) {
     grid-template-columns: 1fr;
   }
+  
 `;
 
 export const Card = styled.li`
