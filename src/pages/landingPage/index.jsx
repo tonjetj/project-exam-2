@@ -32,10 +32,10 @@ function LandingPage() {
       <CardList>
         {venues.map((venue) => (
           <Card key={venue.id}>
+            <VenueImage src={venue.media} alt="Venue Media" />
             <CardTitle>{venue.name}</CardTitle>
             <CardText>Max Guests: {venue.maxGuests}</CardText>
             <CardText>{venue.price} kr /night</CardText>
-             <VenueImage src={venue.media} alt="Venue Media" />
           </Card>
         ))}
       </CardList>
