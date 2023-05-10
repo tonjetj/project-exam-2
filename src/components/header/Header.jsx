@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SubNavigation from "./SubNav";
 import SearchBar from "./SearchBar";
 import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 
 
@@ -28,7 +29,7 @@ const TopHeader = styled.div`
   }
 `;
 
-const LogoWrapper = styled.div`
+const LogoWrapper = styled(Link)`
   align-items: center;
 `;
 
@@ -41,7 +42,7 @@ function Header(){
   return (
     <HeaderWrapper>
       <TopHeader>
-        <LogoWrapper>
+        <LogoWrapper to="/">
           <LogoImg src={logo} alt="Holidaze logo" />
         </LogoWrapper>
         <SearchBar />
