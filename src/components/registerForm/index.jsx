@@ -5,6 +5,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import LoginForm from "../loginForm/index.jsx";
 import API_BASE_URL from "../../api/apiBase.jsx";
 import fetchWithToken from "../../api/storage";
+import {AUTH_REGISTER, PROFILE_BY_NAME} from "../../api/apiEndpoints.js";
+
 
 const schema = yup.object().shape({
   name: yup
@@ -38,7 +40,7 @@ function RegisterForm() {
         body: JSON.stringify(data),
       };
 
-      const response = await fetch(`${API_BASE_URL}/holidaze/auth/register`, postData);
+      const response = await fetch(`${API_BASE_URL}${AUTH_REGISTER}`, postData);
       console.log(response);
       const json = await response.json();
       console.log(json);
@@ -83,4 +85,4 @@ function RegisterForm() {
 export default RegisterForm; 
 
 
-  fetchWithToken(`${API_BASE_URL}/holidaze/profiles/name`);
+  fetchWithToken(`${API_BASE_URL}${PROFILE_BY_NAME(name)}`);
