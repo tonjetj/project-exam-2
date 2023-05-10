@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import SubNavigation from "./subNav";
+import SubNavigation from "./SubNav";
 import SearchBar from "./SearchBar";
 import logo from "../../assets/logo.png";
 
