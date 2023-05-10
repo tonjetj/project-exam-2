@@ -5,6 +5,7 @@ import SearchBar from "./SearchBar";
 import logo from "../../assets/logo.png";
 
 
+
 const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;

@@ -4,6 +4,7 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
+import { NavLink } from "react-router-dom";
 
 
 const Home = styled(HomeRoundedIcon)`
@@ -41,7 +42,7 @@ const SubNavWrapper = styled.div`
   }
 `;
 
-const SubNavigationItem = styled.a`
+const SubNavigationItem = styled(NavLink)`
   color: #fff;
   font-weight: light;
   cursor: pointer;
@@ -59,10 +60,22 @@ margin-top: 0px;
 function SubNavigation() {
   return (
     <SubNavWrapper>
-      <SubNavigationItem><Home/><Sp>Home</Sp></SubNavigationItem>
-      <SubNavigationItem><Explore/><Sp>Explore</Sp></SubNavigationItem>
-      <SubNavigationItem><Favourite/><Sp>Favourites</Sp></SubNavigationItem>
-      <SubNavigationItem><LogIn/><Sp>Log In</Sp></SubNavigationItem>
+      <SubNavigationItem to="/" exact>
+        <Home />
+        <Sp>Home</Sp>
+      </SubNavigationItem>
+      <SubNavigationItem to="/venues">
+        <Explore />
+        <Sp>Explore</Sp>
+      </SubNavigationItem>
+      <SubNavigationItem to="/favourites">
+        <Favourite />
+        <Sp>Favourites</Sp>
+      </SubNavigationItem>
+      <SubNavigationItem to="/login">
+        <LogIn />
+        <Sp>Log In</Sp>
+      </SubNavigationItem>
     </SubNavWrapper>
   );
 };
