@@ -25,27 +25,23 @@ const SubNavWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: #151718;
-  padding: 10px 20px; 
+  padding: 15px; 
   position: fixed;
-  bottom: 0;
   width: 100%;
   z-index: 1;
   box-sizing: border-box;
   border-radius: 60px 60px 0px 0px; 
-
+  bottom: 0; 
   @media screen and (min-width: 1200px) {
-    position: static;
-    border-radius: 0px 0px 60px 60px; 
     width: 55%; 
-    justify-content: space-between; 
-    margin: 0 auto; 
   }
   @media screen and (min-width: 768px) {
-    position: static;
-    border-radius: 0px 0px 60px 60px; 
+    padding: 10px;
+    position: static; 
+    border-radius: 0px; 
     width: 60%; 
-    justify-content: space-between; 
     margin: 0 auto; 
+    border-radius: 15px; 
   }
 `;
 
@@ -56,12 +52,13 @@ const SubNavigationItem = styled(NavLink)`
   text-align: center;
   font-size: 10px; 
   margin: 0 auto; 
+  text-decoration: none;
 
 `;
 
 const Sp = styled.p`
 padding: 0px; 
-margin-top: 0px; 
+margin: 0px; 
 `;
 
 function SubNavigation() {

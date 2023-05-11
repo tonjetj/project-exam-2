@@ -12,7 +12,7 @@ const HeaderWrapper = styled.div`
   flex-direction: column;
   background-color: #202124;
   color: #fff; 
-  width: 100%; 
+  width: 100%;  
 `;
 
 const TopHeader = styled.div`
@@ -20,7 +20,7 @@ const TopHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   min-height: 50px;
-  padding: 0px;
+  padding: 5px 0px;
   margin: 0 20px; 
   @media screen and (min-width: 768px) {
     width: 58%; 
@@ -34,7 +34,7 @@ const LogoWrapper = styled(Link)`
 `;
 
 const LogoImg = styled.img`
-  max-height: 20px;
+  max-height: 30px;
   min-width: 40px;
 `;
 
