@@ -41,7 +41,13 @@ to rent and stay in.</S.HeroText>
         </S.HeroImgContainer>
 
         <S.HeroCard/>
-        <S.HeroCard2/>
+
+                  <S.HeroCard2>
+        <S.Arrow/>
+          <S.HeroText>Register</S.HeroText>
+          <S.HeroText>Create an account and start booking your future stays. </S.HeroText>
+        </S.HeroCard2>
+
       </S.HeroSection>
 
       <h2>Newest venues</h2>

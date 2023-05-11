@@ -4,7 +4,8 @@ import StarIcon from '@mui/icons-material/Star';
 import heroImage from "../../assets/cabin2.jpg";
 import registerImg from "../../assets/cabin1.jpg";
 import { createGlobalStyle } from "styled-components";
-
+import ArrowOutwardRoundedIcon from '@mui/icons-material/ArrowOutwardRounded';
+import { Link } from "react-router-dom";
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Century+Gothic&family=Raleway&display=swap');
 
@@ -65,16 +66,16 @@ export const HeroCta = styled.button`
  margin-bottom: 60px; 
 `
 
-export const HeroCard = styled.div`
-background-image: url(${registerImg});
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+export const HeroCard = styled(Link)`
+ background-image: url(${registerImg});
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
   background-color: #000;
   grid-column: span 2;
   grid-row: span 4;
   border-radius: 20px; 
-
+  text-decoration: none; 
   @media screen and (max-width: 768px) {
     grid-column: unset;
     grid-row: unset;
@@ -86,8 +87,14 @@ export const HeroCard2 = styled(HeroCard)`
 background-image: none; 
 background-color: #3B00C7;
 grid-row: span 3; 
+padding: 20px; 
+display: flex-block;
+align-items: center;
 `
-
+export const Arrow = styled(ArrowOutwardRoundedIcon)`
+transform: scale(2);
+justify-content: flex-end;
+`
 
 export const LandingContainer = styled.div`
   max-width: 100%;
