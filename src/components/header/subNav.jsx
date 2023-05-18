@@ -1,26 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import LoginForm from "../loginForm";
+import * as S from "../loginModal/index.styles"
 
 
-const Home = styled(HomeRoundedIcon)`
+export const Home = styled(HomeRoundedIcon)`
 max-height: 20px; 
 `;
-const Explore = styled(ExploreRoundedIcon)`
+export const Explore = styled(ExploreRoundedIcon)`
 max-height: 20px; 
 `;
-const Favourite = styled(FavoriteRoundedIcon)`
+export const Favourite = styled(FavoriteRoundedIcon)`
 max-height: 20px; 
 `;
-const LogIn = styled(AccountCircleRoundedIcon)`
+export const LogIn = styled(AccountCircleRoundedIcon)`
 max-height: 20px; 
 `;
 
-const SubNavWrapper = styled.div`
+export const SubNavWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,7 +47,7 @@ const SubNavWrapper = styled.div`
   }
 `;
 
-const SubNavigationItem = styled(NavLink)`
+export const SubNavigationItem = styled(NavLink)`
   color: #fff;
   font-weight: light;
   cursor: pointer;
@@ -56,15 +58,42 @@ const SubNavigationItem = styled(NavLink)`
 
 `;
 
-const Sp = styled.p`
+export const Sp = styled.p`
 padding: 0px; 
 margin: 0px; 
 `;
 
+
+
+
+
 function SubNavigation() {
+  const navigate = useNavigate(); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleToggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+ 
+
+  const handleScrollToLogo = () => {
+    const logoWrapper = document.getElementById('logoWrapper');
+    if (logoWrapper) {
+      window.scrollTo({
+        top: logoWrapper.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <SubNavWrapper>
-      <SubNavigationItem to="/" exact>
+      <SubNavigationItem to="/" exact onClick={handleScrollToLogo}>
         <Home />
         <Sp>Home</Sp>
       </SubNavigationItem>
@@ -76,10 +105,25 @@ function SubNavigation() {
         <Favourite />
         <Sp>Favourites</Sp>
       </SubNavigationItem>
-      <SubNavigationItem to="/login">
+      <SubNavigationItem onClick={handleToggleModal}>
         <LogIn />
         <Sp>Log In</Sp>
       </SubNavigationItem>
+      {isModalOpen && (
+        <S.ModalWrapper>
+          <S.ModalContent>
+            <S.CloseButton onClick={handleCloseModal} />
+            <LoginForm
+              onClose={handleCloseModal}
+              onSuccess={() => {
+                handleCloseModal();
+                navigate("/dashboard");
+              }}
+              navigate={navigate}
+            />
+          </S.ModalContent>
+        </S.ModalWrapper>
+      )}
     </SubNavWrapper>
   );
 };

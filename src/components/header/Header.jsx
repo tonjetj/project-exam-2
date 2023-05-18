@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import styled from "styled-components";
 import SubNavigation from "./SubNav";
 import SearchBar from "./SearchBar";
@@ -42,7 +42,7 @@ function Header(){
   return (
     <HeaderWrapper>
       <TopHeader>
-        <LogoWrapper to="/">
+        <LogoWrapper id="logoWrapper" to="/">
           <LogoImg src={logo} alt="Holidaze logo" />
         </LogoWrapper>
         <SearchBar />
