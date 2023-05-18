@@ -1,34 +1,20 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
 import { yupResolver } from '@hookform/resolvers/yup';
-import LoginForm from "../loginForm/index.jsx";
-import API_BASE_URL from "../../api/apiBase.jsx";
+import { API_BASE_URL } from "../../api/apiBase.js";
 import fetchWithToken from "../../api/storage";
-import {AUTH_REGISTER, PROFILE_BY_NAME} from "../../api/apiEndpoints.js";
+import * as S from "./index.styles.jsx";
+import { InputAdornment } from "@mui/material";
+import { schema } from "./schema.jsx";
+import LoginModal from "../loginModal/index.jsx";
 
+function RegisterForm({onSuccess}) {
 
-const schema = yup.object().shape({
-  name: yup
-    .string()
-    .matches(/^[\w_]+$/, "Your name can only contain letters, numbers, and underscores")
-    .required("A name is required"),
-  email: yup
-    .string()
-    .email("Please enter your email address in format user@stud.noroff.no or user@noroff.no")
-    .matches(/^(.*)@(stud\.)?noroff\.no$/, "Your email must be a valid @stud.noroff.no or @noroff.no email address")
-    .required("Email is required"),
-  password: yup.string().min(8, "Password must be at least 8 characters long").required("Password is required"),
-  avatar: yup.string().url("Please enter a valid URL for your Avatar"),
-  venueManager: yup.boolean(),
-});
-
-function RegisterForm() {
   const [isRegistered, setIsRegistered] = useState(false);
-
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
+
 
   const onSubmit = async (data) => {
     try {
@@ -40,49 +26,86 @@ function RegisterForm() {
         body: JSON.stringify(data),
       };
 
-      const response = await fetch(`${API_BASE_URL}${AUTH_REGISTER}`, postData);
-      console.log(response);
+      const response = await fetch(`${API_BASE_URL}/holidaze/auth/register`, postData);
       const json = await response.json();
-      console.log(json);
-      setIsRegistered(true);
+
+      if (response.ok) {
+        setIsRegistered(true);
+        onSuccess(); 
+      } else {
+        console.log(json);
+      }
+
     } catch (error) {
       console.log(error);
     }
   };
 
+
   return (
     <>
-      {!isRegistered ? (
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" {...register("name")} />
-          {errors.name && <p>{errors.name.message}</p>}
-          <br/>
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" {...register("email")} />
-          {errors.email && <p>{errors.email.message}</p>}
-          <br/>
-          <label htmlFor="password">Password:</label>
-          <input type="password" id="password" {...register("password")} />
-          {errors.password && <p>{errors.password.message}</p>}
-          <br/>
-          <label htmlFor="avatar">Avatar:</label>
-          <input type="text" id="avatar" {...register("avatar")} />
-          {errors.avatar && <p>{errors.avatar.message}</p>}
-          <br/>
-          <label htmlFor="venueManager">Venue Manager:</label>
-          <input type="checkbox" id="venueManager" {...register("venueManager")} />
-          <br/>
-          <button type="submit">Register</button>
-        </form>
-      ) : (
-        <LoginForm />
-      )}
-    </>
+    {!isRegistered ? (
+      <S.FormWrapper onSubmit={handleSubmit(onSubmit)}>
+        
+        <S.FormInput type="text" id="name" {...register("name")} placeholder="Ola_Nordmann95" variant="standard" label="Username" InputProps={{
+    startAdornment: (
+      <InputAdornment position="start">
+        <S.Person />
+      </InputAdornment>
+    ),
+  }} />
+        {errors.name && <S.ErrorMessage>{errors.name.message}</S.ErrorMessage>}
+
+
+        <S.FormInput type="email" id="email" {...register("email")} placeholder="example@stud.noroff.no" variant="standard" label="Email" InputProps={{
+    startAdornment: (
+      <InputAdornment position="start">
+        <S.Email />
+      </InputAdornment>
+    ),
+  }} />
+        {errors.email && <S.ErrorMessage>{errors.email.message}</S.ErrorMessage>}
+
+      
+        <S.FormInput  type="password" id="password" {...register("password")} placeholder="********" variant="standard" label="Password" InputProps={{
+    startAdornment: (
+      <InputAdornment position="start">
+        <S.Password />
+      </InputAdornment>
+    ),
+  }} />
+        {errors.password && <S.ErrorMessage>{errors.password.message}</S.ErrorMessage>}
+
+    
+        <S.FormInput  type="text" id="avatar" {...register("avatar")} placeholder="https://image-url.com/something" variant="standard" label="Image URL" InputProps={{
+    startAdornment: (
+      <InputAdornment position="start">
+        <S.Photo />
+      </InputAdornment>
+    ),
+  }}/>
+        {errors.avatar && <S.ErrorMessage>{errors.avatar.message}</S.ErrorMessage>}
+
+        <S.VenueCheck>
+        <label htmlFor="venueManager">Register as a Venue Manager</label>
+        <input type="checkbox" id="venueManager" {...register("venueManager")} />
+        </S.VenueCheck>
+
+
+        <S.SubmitButton type="submit">Register</S.SubmitButton>
+      </S.FormWrapper>
+    ) : (
+
+
+      <LoginModal />
+
+    )}
+  </>
   );
+  
 }
 
 export default RegisterForm; 
 
 
-  fetchWithToken(`${API_BASE_URL}${PROFILE_BY_NAME(name)}`);
+  fetchWithToken(`${API_BASE_URL}/holidaze/profiles`);
