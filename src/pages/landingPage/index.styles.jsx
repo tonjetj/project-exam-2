@@ -40,6 +40,7 @@ export const HeroImgContainer = styled.div`
   flex-direction: column; 
   justify-content: center;
   align-items: center;
+  padding: 0px 20px; 
 
   @media screen and (max-width: 768px) {
     grid-column: unset;
@@ -53,6 +54,10 @@ max-width: 150px;
 `
 export const HeroText = styled.p`
 font-size: 20px; 
+`
+
+export const Card1Text = styled(HeroText)`
+text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
 `
 
 export const HeroCta = styled.button`
@@ -74,8 +79,10 @@ export const HeroCard = styled(Link)`
   background-color: #000;
   grid-column: span 2;
   grid-row: span 4;
+  padding: 20px; 
   border-radius: 20px; 
   text-decoration: none; 
+  color: #fff; 
   @media screen and (max-width: 768px) {
     grid-column: unset;
     grid-row: unset;
@@ -87,7 +94,6 @@ export const HeroCard2 = styled(HeroCard)`
 background-image: none; 
 background-color: #3B00C7;
 grid-row: span 3; 
-padding: 20px; 
 display: flex-block;
 align-items: center;
 `
