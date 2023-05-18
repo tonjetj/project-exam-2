@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/header/Header.jsx";
 import LandingPage from "./pages/landingPage";
 import VenuesPage from "./pages/venues";
+import RegisterPage from "./pages/registerPage/index.jsx";
+import DashboardPage from "./pages/dashboard/index.jsx";
 
 function App() {
   return (
@@ -12,8 +14,9 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/venues" element={<VenuesPage />} />
-          {/* <Route path="/favourites" element={<FavouritesPage />} />
-          <Route path="/login" element={<LoginPage />} /> */}
+          {/* <Routes path="/favourites" element={<FavouritesPage />} /> */}
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
         </Routes>
       </div>
     </Router>
