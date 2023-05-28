@@ -53,5 +53,5 @@ If you would like to contribute to the Holidaze project, please follow these ste
 
 If you have any questions or suggestions regarding the Holidaze project, please feel free to contact us:
 
-    Email: tontotjen@gmail.com
-    GitHub: tonjetj
+    Email: [tontotjen@gmail.com](mailto:tontotjen@gmail.com)
+    GitHub: [tonjetj](https://github.com/tonjetj)
