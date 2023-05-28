@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Holidaze
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Holidaze is a React-based project developed for the company Holidaze as a project exam for Noroff. Holidaze is a platform that allows users to find and rent unique accommodations for their vacations as well as sign up as a Venue Manager and rent out their own venue(s). This README.md file provides an overview of the project and instructions for setting it up and running it locally.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+To set up the Holidaze project locally, follow these steps:
 
-### `npm start`
+1. Clone the repository from GitHub.
+2. Navigate to the project directory.
+3. Run the following command to install the dependencies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   ```bash
+   npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Usage
 
-### `npm test`
+To run the Holidaze project locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    Ensure that the dependencies are installed (see the Installation section).
 
-### `npm run build`
+    Run the following command to start the development server:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    bash
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    npm run start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Open your web browser and navigate to http://localhost:3000 to access the application.
 
-### `npm run eject`
+Testing
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To run the tests for the Holidaze project, follow these steps:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Ensure that the dependencies are installed (see the Installation section).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    Run the following command to execute the tests:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    bash
 
-## Learn More
+    npm run test
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+If you would like to contribute to the Holidaze project, please follow these steps:
 
-### Code Splitting
+    Fork the repository on GitHub.
+    Create a new branch for your feature or bug fix.
+    Make the necessary changes and commit them.
+    Push your branch to your forked repository.
+    Submit a pull request describing your changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Contact
 
-### Analyzing the Bundle Size
+If you have any questions or suggestions regarding the Holidaze project, please feel free to contact us:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    Email: tontotjen@gmail.com
+    GitHub: tonjetj
