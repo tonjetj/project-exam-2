@@ -2,6 +2,8 @@
 
 Holidaze is a React-based project developed for the company Holidaze as a project exam for Noroff. Holidaze is a platform that allows users to find and rent unique accommodations for their vacations as well as sign up as a Venue Manager and rent out their own venue(s). This README.md file provides an overview of the project and instructions for setting it up and running it locally.
 
+All of the code in this project is done by me. 
+
 ## Installation
 
 To set up the Holidaze project locally, follow these steps:
