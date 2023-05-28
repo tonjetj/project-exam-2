@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import CloseIcon from '@mui/icons-material/Close';
 import { Link } from "react-router-dom";
 import { TextField } from '@mui/material';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';

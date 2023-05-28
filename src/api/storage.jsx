@@ -1,4 +1,3 @@
-
 async function fetchWithToken(url) {
   try {
     const token = localStorage.getItem('accessToken');

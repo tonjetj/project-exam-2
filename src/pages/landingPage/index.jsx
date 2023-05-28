@@ -4,6 +4,7 @@ import { VENUES } from "../../api/apiEndpoints";
 import { API_BASE_URL } from "../../api/apiBase";
 import * as S from "./index.styles";
 import logo from "../../assets/logo.png";
+import noimage from "../../assets/noimage.jpg"
 
 const url = `${API_BASE_URL}${VENUES}`;
 
@@ -55,17 +56,39 @@ to rent and stay in.</S.HeroText>
 
       </S.HeroSection>
 
-      <h2>Newest venues</h2>
+      <S.ViewVenues>
+        <h2>Newest venues</h2>
+
+        <S.ArrowLink to="/venues">
+          <p>View all venues</p>
+          <S.EastArrow/>
+        </S.ArrowLink>
+      </S.ViewVenues>
+
+
+
       <S.CardList>
         {venues.map((venue) => (
-          <S.Card key={venue.id}>
-            <S.VenueImage src={venue.media} alt="Venue Media" />
-            <S.CardTitle>{venue.name}</S.CardTitle>
-            <S.CardText><S.Place /> {venue.location.address}, {venue.location.country}</S.CardText>
-            <S.CardText>{venue.price} kr night</S.CardText>
-            <S.CardText>{venue.rating}<S.Star></S.Star></S.CardText>
-          </S.Card>
-        ))}
+             <S.ALink to={`/venue/${venue.id}`}>
+             <S.Card key={venue.id}>
+               <S.VenueImage src={venue.media ? venue.media : noimage}/>
+     
+                 <S.CopyWrapper>
+                   <S.CardTitle>{venue.name}</S.CardTitle>
+                   <S.PlaceText>
+                     <S.Place /> {venue.location.address}, {venue.location.country}
+                   </S.PlaceText>
+                   <S.BottomText>
+                     <S.PriceText>{venue.price} kr night</S.PriceText>
+                     <S.RatingText>
+                       {venue.rating}
+                       <S.Star></S.Star>
+                     </S.RatingText>
+                   </S.BottomText>
+                 </S.CopyWrapper>
+               </S.Card>
+             </S.ALink> 
+                     ))}
       </S.CardList>
 
     </S.LandingContainer>

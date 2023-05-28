@@ -7,21 +7,20 @@ import { InputAdornment } from "@mui/material";
 import { loginSchema } from "./schema";
 
 
-function LoginForm({onClose, navigate, onSuccess}) {
+function LoginForm({ onClose, onSuccess, navigate }) {
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(loginSchema),
   });
-
 
   const onSubmit = async (data) => {
     try {
       setIsLoggingIn(true);
 
       const postData = {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       };
@@ -29,22 +28,21 @@ function LoginForm({onClose, navigate, onSuccess}) {
       const response = await fetch(`${API_BASE_URL}/holidaze/auth/login`, postData);
       const json = await response.json();
 
-       if (response.ok) {
-        localStorage.setItem('accessToken', json.accessToken);
+      if (response.ok) {
+        localStorage.setItem("accessToken", json.accessToken);
         onClose();
-        onSuccess(json.userData);
-        navigate("/dashboard");
+        onSuccess(json);
+        navigate(`/dashboard/${json.name}`);
       } else {
-        console.log(json); 
+        console.log(json);
       }
 
-        setIsLoggingIn(false);
+      setIsLoggingIn(false);
     } catch (error) {
-        console.log(error);
-        setIsLoggingIn(false); 
+      console.log(error);
+      setIsLoggingIn(false);
     }
   };
-
 
   return (
     <S.FormWrapper onSubmit={handleSubmit(onSubmit)}>

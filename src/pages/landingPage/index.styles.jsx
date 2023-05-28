@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import PlaceIcon from '@mui/icons-material/Place';
 import StarIcon from '@mui/icons-material/Star';
+import ArrowOutwardRoundedIcon from '@mui/icons-material/ArrowOutwardRounded';
 import heroImage from "../../assets/cabin2.jpg";
 import registerImg from "../../assets/cabin1.jpg";
 import { createGlobalStyle } from "styled-components";
-import ArrowOutwardRoundedIcon from '@mui/icons-material/ArrowOutwardRounded';
 import { Link } from "react-router-dom";
+import EastRoundedIcon from '@mui/icons-material/EastRounded';
+
+
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Century+Gothic&family=Raleway&display=swap');
 
@@ -13,6 +16,10 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export default GlobalStyles;
+
+export const EastArrow = styled(EastRoundedIcon)`
+max-height: 20px; 
+`
 
 export const HeroSection = styled.div`
   display: grid;
@@ -117,6 +124,18 @@ export const LandingContainer = styled.div`
   } 
 `;
 
+export const ALink = styled(Link)`
+text-decoration: none; 
+`
+
+export const ArrowLink = styled(ALink)`
+display: inline-flex; 
+align-items: center; 
+justify-content: space-between;
+color: #fff; 
+font-size: 20px; 
+`
+
 export const CardList = styled.ul`
   list-style: none;
   display: grid;
@@ -125,55 +144,128 @@ export const CardList = styled.ul`
   padding: 0;
 
   @media screen and (max-width: 1250px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 798px) {
     grid-template-columns: 1fr;
   }
-  
 `;
-
 export const Card = styled.li`
   background-color: #000;
   border-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #fff;
-  text-align: left; 
-  
-
-  @media screen and (min-width: 768px) {
+  text-align: left;
+  text-decoration: none; 
+  @media screen and (min-width: 798px) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 500px;
+    max-height: 500px;
+    max-width: 280px;
+  }
+
+  @media screen and (max-width: 798px) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    min-width: 300px;
+    min-width: 368px;
   }
 `;
 
 export const CardTitle = styled.p`
-font-size: 20px; 
-margin: 0 0 1 rem;  
-`
+  font-size: 20px;
+  font-family: "Century Gothic", sans-serif;
+  margin: 5px 0;
+  @media screen and (max-width: 798px) {
+    margin: 0; 
+    padding: 0; 
+    font-size: 18px; 
+  }
+
+`;
 export const CardText = styled.p`
-font-size: 15px; 
-margin: 0 0 1 rem; 
-`
+  font-size: 15px;
+  margin: 0 0 1rem;
+  padding: 5px;
+  @media screen and (max-width: 798px) {
+    margin: 0; 
+    padding: 0; 
+    font-size: 13px; 
+  }
+`;
 
 export const PlaceText = styled.p`
-font-size: 15px; 
-margin: 0 0 1 rem; 
+    font-size: 13px;
+    font-family: "Century Gothic", sans-serif;
+    opacity: 0.8;
+    margin: 0 0 1rem;
+    padding: 5px 0px; 
+  @media screen and (max-width: 798px) {
+    margin: 0; 
+    font-size: 11px; 
+  }
+`;
+
+export const BottomText = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 798px){
+    width: 270px; 
+  } 
+`;
+
+export const CopyWrapper = styled.div` 
+display: flex-block; 
+align-items: center; 
+padding: 20px; 
+flex-direction: column;
+margin-bottom: 20px; 
 `
+
+export const PriceText = styled(CardText)`
+justify-content: flex-start; 
+`;
+export const RatingText = styled(CardText)`
+justify-content: flex-end; 
+`;
 
 export const Place = styled(PlaceIcon)`
-max-height: 15px; 
-opacity: 80%; 
-`
+  max-height: 15px;
+  opacity: 0.8;
+`;
 
 export const Star = styled(StarIcon)`
-max-height: 20px; 
-color: #FFB300; 
-`
+  max-height: 20px;
+  color: #ffb300;
+  text-align: right;
+`;
 
 export const VenueImage = styled.img`
-  max-width: 100%; 
-  min-height: 200px; 
-  max-height: 200px; 
-  border-radius: 20px 20px 0px 0px; 
+  min-width: 180px;
+  min-height: 280px;
+  max-height: 280px;
+  border-radius: 20px 20px 0px 0px;
+
+  @media screen and (max-width: 798px) {
+    min-width: 250px; 
+    max-width: 250px; 
+    min-height: 180px;
+    max-height: 180px;
+    border-radius: 0px 20px 20px 0px; 
+  }
 `;
 
 
+export const ViewVenues = styled.div`
+display: flex; 
+justify-content: space-between;
+width: 100%; 
+align-items: center; 
+`
