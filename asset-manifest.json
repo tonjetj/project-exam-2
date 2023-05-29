@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/holidaze/static/css/main.c2b59c62.css",
+    "main.js": "/holidaze/static/js/main.818cdea8.js",
+    "static/js/787.656fbe24.chunk.js": "/holidaze/static/js/787.656fbe24.chunk.js",
+    "static/media/cabin2.jpg": "/holidaze/static/media/cabin2.d2f9da73d5660490aae0.jpg",
+    "static/media/cabin1.jpg": "/holidaze/static/media/cabin1.47c619d7b91c8f46726f.jpg",
+    "static/media/logo.png": "/holidaze/static/media/logo.4f5bd1493638973ec1a8.png",
+    "index.html": "/holidaze/index.html",
+    "main.c2b59c62.css.map": "/holidaze/static/css/main.c2b59c62.css.map",
+    "main.818cdea8.js.map": "/holidaze/static/js/main.818cdea8.js.map",
+    "787.656fbe24.chunk.js.map": "/holidaze/static/js/787.656fbe24.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2b59c62.css",
+    "static/js/main.818cdea8.js"
+  ]
+}
