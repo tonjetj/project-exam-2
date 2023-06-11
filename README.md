@@ -1,10 +1,26 @@
-# Holidaze
+# Holidaze, Project Exam
+![holidaze2](https://github.com/tonjetj/project-exam-2/assets/91598255/bfa54908-34bf-459f-af33-92ee781e5d99)
+
+This is a website for a booking company called Holidaze.
+
+## Description 
 
 Holidaze is a React-based project developed for the company Holidaze as a project exam for Noroff. Holidaze is a platform that allows users to find and rent unique accommodations for their vacations as well as sign up as a Venue Manager and rent out their own venue(s). This README.md file provides an overview of the project and instructions for setting it up and running it locally.
 
-All of the code in this project is done by me. 
+Key Features:
 
-## Installation
+- Explore and discover a wide range of homes to rent.
+- Rent out your home as a Venue Manager.
+
+## Built With
+
+You can list a the tech stack that you've used over here
+
+- React
+- Styled Components
+
+## Getting Started
+### Installation
 
 To set up the Holidaze project locally, follow these steps:
 
@@ -41,19 +57,24 @@ To run the tests for the Holidaze project, follow these steps:
 
     npm run test
 
-### Contributing
+## Contributing
 
-If you would like to contribute to the Holidaze project, please follow these steps:
+If you would like to contribute, please follow these guidelines:
 
-    Fork the repository on GitHub.
-    Create a new branch for your feature or bug fix.
-    Make the necessary changes and commit them.
-    Push your branch to your forked repository.
-    Submit a pull request describing your changes.
+- Fork the repository and create a new branch for your contributions.
+- Make your desired changes or additions to the codebase.
+- Ensure that your changes adhere to the project's coding conventions and best practices.
+- Test your changes thoroughly to ensure they function as expected.
+- Open a pull request, providing a clear and concise description of your changes.
+- Your pull request will be reviewed by the project maintainers, and any necessary feedback or discussions will be conducted.
+- Once your changes are approved, they will be merged into the main branch.
 
-### Contact
+Thank you for considering contributing to this project!
 
-If you have any questions or suggestions regarding the Holidaze project, please feel free to contact us:
+## Contact
 
-    Email: [tontotjen@gmail.com](mailto:tontotjen@gmail.com)
-    GitHub: [tonjetj](https://github.com/tonjetj)
+You can reach out to me on:
+[tontotjen@gmail.com](mailto:tontotjen@gmail.com)
+[www.linkedin.com](https://www.linkedin.com/in/tonje-totland-jenssen-1b6209a4/)
+
+I would be happy to answer any questions or discuss any feedback you may have regarding the project.
